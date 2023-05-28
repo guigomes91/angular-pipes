@@ -7,6 +7,9 @@ import { CamelCasePipe } from './camel-case.pipe';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { SettingsService } from './settings.service';
+import { FiltroArrayPipe } from './filtro-array.pipe';
+import { PipeImpuroPipe } from './pipe-impuro.pipe';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localePt);
 
@@ -14,10 +17,13 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     ExemplosPipeComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayPipe,
+    PipeImpuroPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     SettingsService,
