@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-exemplos-pipe',
@@ -17,8 +19,14 @@ export class ExemplosPipeComponent {
   };
 
   livros: string[] = ['Java', 'Angular 2'];
-
   filtro: string = '';
+
+  valorAsync = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Valor assíncrono'), 2000)
+  });
+
+  valorAsync2 = interval(2000)
+  .subscribe(valor => 'Valor assíncrono2')
 
   addCurso(curso: string) {
     this.livros.push(curso);
